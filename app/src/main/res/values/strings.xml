@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LuxInteligent</string>
+    <string-array name="devices_array">
+        <item>Luz Sala</item>
+        <item>Luz Cocina</item>
+        <item>Luz Dormitorio</item>
+    </string-array>
+</resources>
