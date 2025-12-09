@@ -1,171 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/bg_main_gradient">
+    android:orientation="vertical"
+    android:background="@drawable/bg_main_gradient"
+    android:fitsSystemWindows="true">
 
-    <LinearLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:layout_height="?attr/actionBarSize"
+        android:background="@android:color/transparent"
+        android:elevation="4dp"
+        app:titleTextColor="#1A237E"
+        app:title="LuxInteligent"
+        app:popupTheme="@style/Theme.AppCompat.Light" />
 
-        <!-- Encabezado -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Buenos Días"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            android:textColor="#1A237E" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
-            android:id="@+id/txt_status_bt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Desconectado"
-            android:textColor="#757575"
-            android:layout_marginBottom="30dp" />
-
-        <!-- Grid de Tarjetas de Control -->
-        <GridLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="2">
+            android:orientation="vertical"
+            android:padding="20dp">
 
-            <!-- TARJETA 1: SALA DE ESTAR -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@drawable/glass_card_bg"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:elevation="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buenos Días"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="#1A237E" />
 
-                <Switch
-                    android:id="@+id/sw_sala"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:thumbTint="#2196F3"
-                    android:trackTint="#BBDEFB" />
+            <TextView
+                android:id="@+id/txt_status_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estado: Desconectado"
+                android:textColor="#757575"
+                android:layout_marginBottom="20dp" />
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@android:drawable/ic_menu_compass"
-                    app:tint="#2196F3" />
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="3">
 
-                <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/glass_card_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:elevation="4dp">
+                    <Switch
+                        android:id="@+id/sw_sala"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:thumbTint="#2196F3"
+                        android:trackTint="#BBDEFB" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_menu_compass"
+                        app:tint="#2196F3" />
+                    <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sala de Estar"
+                        android:textStyle="bold"
+                        android:textColor="#333"/>
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sala de Estar"
-                    android:textStyle="bold"
-                    android:textColor="#333"/>
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/glass_card_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:elevation="4dp">
+                    <Switch
+                        android:id="@+id/sw_cocina"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:thumbTint="#2196F3"
+                        android:trackTint="#BBDEFB" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        app:tint="#2196F3" />
+                    <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cocina"
+                        android:textStyle="bold"
+                        android:textColor="#333"/>
+                </LinearLayout>
 
-            <!-- TARJETA 2: COCINA -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@drawable/glass_card_bg"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:elevation="4dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/glass_card_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:elevation="4dp">
+                    <Switch
+                        android:id="@+id/sw_dormitorio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:thumbTint="#2196F3"
+                        android:trackTint="#BBDEFB" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@android:drawable/ic_lock_idle_alarm"
+                        app:tint="#2196F3" />
+                    <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dormitorio"
+                        android:textStyle="bold"
+                        android:textColor="#333"/>
+                </LinearLayout>
 
-                <Switch
-                    android:id="@+id/sw_cocina"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/glass_card_bg"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:elevation="4dp">
+                    <Switch
+                        android:id="@+id/sw_auto_mode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:thumbTint="#FFD700"
+                        android:trackTint="#FFF9C4" />
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/ic_sunny"
+                        app:tint="#FFD700" />
+                    <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sensor Luz"
+                        android:textStyle="bold"
+                        android:textColor="#333"/>
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@android:drawable/ic_menu_info_details"
-                    app:tint="#757575" />
+                <LinearLayout
+                    android:id="@+id/card_rutinas"
+                    android:layout_width="0dp"
+                    android:layout_height="160dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/glass_card_bg"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="4dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:textSize="40sp"
+                        android:textColor="#BDBDBD"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Crear Rutina"
+                        android:textColor="#757575"/>
+                </LinearLayout>
 
-                <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cocina"
-                    android:textStyle="bold"
-                    android:textColor="#333"/>
-            </LinearLayout>
-
-            <!-- TARJETA 3: DORMITORIO -->
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@drawable/glass_card_bg"
-                android:orientation="vertical"
-                android:padding="16dp"
-                android:elevation="4dp">
-
-                <Switch
-                    android:id="@+id/sw_dormitorio"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end" />
-
-                <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:src="@android:drawable/ic_lock_idle_alarm"
-                    app:tint="#757575" />
-
-                <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dormitorio"
-                    android:textStyle="bold"
-                    android:textColor="#333"/>
-            </LinearLayout>
-
-            <!-- TARJETA 4: AÑADIR/RUTINAS -->
-            <LinearLayout
-                android:id="@+id/card_rutinas"
-                android:layout_width="0dp"
-                android:layout_height="160dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="@drawable/glass_card_bg"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:clickable="true"
-                android:focusable="true"
-                android:elevation="4dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="+"
-                    android:textSize="40sp"
-                    android:textColor="#BDBDBD"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Crear Rutina"
-                    android:textColor="#757575"/>
-            </LinearLayout>
-
-        </GridLayout>
-
-    </LinearLayout>
-</ScrollView>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

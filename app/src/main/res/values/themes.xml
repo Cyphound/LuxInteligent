@@ -16,5 +16,7 @@
         <item name="android:statusBarColor">#E3F2FD</item>
         <!-- Hacemos los iconos de la barra de estado oscuros para que se vean sobre fondo claro -->
         <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:fitsSystemWindows">false</item>
     </style>
 </resources>
